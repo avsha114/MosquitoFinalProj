@@ -19,6 +19,8 @@ if __name__ == '__main__':
     # instantiating an object (rf) with the RoboflowOak module
     rf = RoboflowOak(model="finalproj-hqv3h", confidence=0.3,
                      version="7", api_key="C8KHaS2KcTcQPxED81c0", rgb=True, depth=True)
+
+    # Apply settings for better inference from long distances
     stereo = rf.dai_pipe.stereo
     left = rf.dai_pipe.left
     right = rf.dai_pipe.right
@@ -31,15 +33,16 @@ if __name__ == '__main__':
         # The rf.detect() function runs the model inference
         result, frame, raw_frame, depth = rf.detect(visualize=True)
         predictions = result["predictions"]
+
+        # Print predictions to console
         if predictions:
             predition_list = [p.json() for p in predictions]
             print("\nPredictions:")
             for p in predition_list:
                 print(p)
 
-
+        # Resize frame for better view
         frame = cv2.resize(frame, (832, 832))  # 416*2
-
 
         text = TextHelper()
 
