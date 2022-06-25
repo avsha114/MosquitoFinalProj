@@ -1,11 +1,11 @@
 # MosquitoFinalProj
 An AI solution to identify birds, drones and lasers with Oak-D Lite camera.
 
-The project is working with our model trained in [Roboflow](https://roboflow.com) to recognize birds, drones and lasers.
+The project is working with our model trained with [Roboflow](https://roboflow.com) to recognize birds, drones and lasers.
 
 You can use our model or train one of your own with Roboflow.
 
-We used the library RoboflowOak to implement the machine.
+We used the library RoboflowOak in our implementation.
 
 # Examples
 ![screenshot1](Screenshots/screenshot1.png)
